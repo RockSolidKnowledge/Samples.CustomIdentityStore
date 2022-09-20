@@ -1,0 +1,88 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>Base_Installation</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Shared\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\_ViewStart.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\css\site.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\AUI_Badge_RGB_Slate.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\favicon.ico" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\favicon.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\flags\cn.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\flags\de.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\flags\en-GB.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\flags\fr.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\css\all.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\css\all.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-brands-400.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-brands-400.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-brands-400.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-brands-400.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-brands-400.woff2" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-duotone-900.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-duotone-900.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-duotone-900.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-duotone-900.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-duotone-900.woff2" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-light-300.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-light-300.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-light-300.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-light-300.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-light-300.woff2" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-regular-400.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-regular-400.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-regular-400.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-regular-400.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-regular-400.woff2" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-solid-900.eot" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-solid-900.svg" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-solid-900.ttf" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-solid-900.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\fontawesome\webfonts\fa-solid-900.woff2" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\roboto\roboto.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\roboto\webfonts\400.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\roboto\webfonts\500.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\fonts\roboto\webfonts\700.woff" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\img\logo-persimmon.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\img\logo-white.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\img\pattern.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\img\rsk-logo.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\logo_badge_gold.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\logo_full_slate.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\rsk-logo.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\scripts\bootstrap.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\scripts\index.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\scripts\jquery.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\scripts\tether.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\styles\app.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\assets\styles\bootstrap.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\resources\de.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\resources\en-GB.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\resources\es.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\resources\fr.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\resources\locales.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\resources\zh-CN.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\admin\resources\zh-TW.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Rsk.AdminUI" Version="6.3.0" />
+      <PackageReference Include="Rsk.CustomIdentity" Version="1.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot\admin" />
+    </ItemGroup>
+    
+</Project>
