@@ -153,13 +153,14 @@ public class RoleStore : ISSORoleStore
             role.Users.Count);
     }
 
-    public  async Task<FindUsersInRoleResult> FindUsersInRole(string roleId, string searchTerm, UserState userState, IPagination pagination)
-    { 
-        var role = await _identityContext.Roles.FindAsync(roleId);
-        var users = _identityContext.Users.Where(user => user.IsBlocked == !userState.Active).ToList();
+    public async Task<FindUsersWithRoleStatusResult> FindUsersWithRoleStatus(string roleId, string searchTerm, UserState userState, IPagination pagination)
+    {
+        var users = _identityContext.Users
+            .Include(user => user.Roles)
+            .Where(user => user.IsBlocked == !userState.Active)
+            .ToList();
 
-        var usersInRole = users.Where(user => role.Users.Any(roleUser => roleUser.UserId == user.UserId)).Select(user => user.UserId);
-        return new FindUsersInRoleResult(users.Select(user => user.ToStoreUser()).ToList(), users.Count, usersInRole);
+        return new FindUsersWithRoleStatusResult(users.Select(user => new UserWithRoleStatus(user.ToStoreUser(), user.Roles.Any(role => role.Id == roleId))), users.Count);
     }
 
     public async Task<IEnumerable<ISSORole>> FindRolesByUser(ISSOUser user)

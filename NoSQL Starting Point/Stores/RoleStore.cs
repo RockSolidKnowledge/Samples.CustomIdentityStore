@@ -214,10 +214,9 @@ public class RoleStore : ISSORoleStore
         return new FindUsersResult(filteredUsers, totalUsers);
     }
 
-    public async Task<FindUsersInRoleResult> FindUsersInRole(string roleId, string searchTerm, UserState userState, IPagination pagination)
+    public async Task<FindUsersWithRoleStatusResult> FindUsersWithRoleStatus(string roleId, string searchTerm, UserState userState, IPagination pagination)
     {
-        var allUsersQuery = await dbUsers.FindAsync(_ => true);
-        var allUsers = await allUsersQuery.ToListAsync();
+        var allUsers = await (await dbUsers.FindAsync(_ => true)).ToListAsync();
 
         IEnumerable<CustomSSOUser> filteredUsers = allUsers;
 
@@ -227,18 +226,16 @@ public class RoleStore : ISSORoleStore
             filteredUsers = usersByQuery.ToList();
         }
 
-        filteredUsers = TranslateUserState(filteredUsers, userState);
+        filteredUsers = TranslateUserState(filteredUsers, userState).ToList();
 
         var totalUsers = filteredUsers.Count();
         
         var pagesToSkip = pagination.Page == 0 ? 0 : pagination.Page - 1;
         filteredUsers = filteredUsers.Skip(pagesToSkip * pagination.PageSize).Take(pagination.PageSize);
 
-        var usersInRole = filteredUsers.Where(u => u.Roles.Any(r => r.Id == roleId)).Select(u => u.Id);
-
-        return new FindUsersInRoleResult(filteredUsers, totalUsers, usersInRole);
+        return new FindUsersWithRoleStatusResult(filteredUsers.Select(user => new UserWithRoleStatus(user, user.Roles.Any(ur => ur.Id == roleId))), totalUsers);
     }
-
+    
     public async Task<IEnumerable<ISSORole>> FindRolesByUser(ISSOUser user)
     {
         var dbUser = await (await dbUsers.FindAsync(u => user.Id == u.Id)).FirstOrDefaultAsync();

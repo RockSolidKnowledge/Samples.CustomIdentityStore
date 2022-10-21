@@ -40,16 +40,6 @@ public class RoleStore : ISSORoleStore
         throw new NotImplementedException();
     }
     
-    public Task AddUsersToRole(ISSORole role, IList<ISSOUser> users)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task RemoveUsersFromRole(ISSORole role, IList<ISSOUser> users)
-    {
-        throw new NotImplementedException();
-    }
-
     public Task AddUserToRoles(ISSOUser user, IEnumerable<string> roles)
     {
         throw new NotImplementedException();
@@ -70,7 +60,7 @@ public class RoleStore : ISSORoleStore
         throw new NotImplementedException();
     }
 
-    public Task<FindUsersInRoleResult> FindUsersInRole(string roleId, string searchTerm, UserState userState, IPagination pagination)
+    public Task<FindUsersWithRoleStatusResult> FindUsersWithRoleStatus(string roleId, string searchTerm, UserState userState, IPagination pagination)
     {
         throw new NotImplementedException();
     }

@@ -163,23 +163,6 @@ public class UserStore : ISSOUserStore
         return Task.FromResult(new FindUsersResult(storeUsers.ToList(), storeUsers.Count()));
     }
 
-    public Task<FindUsersResult> FindUsersWithFieldsAndOrdering(UserSearchWithFieldsAndOrdering filter)
-    {
-        var dbUsers = _identityContext.Users.Include(user => user.Claims).Include(user => user.Roles).Include(user => user.Tenant);
-        if (dbUsers.IsNullOrEmpty())
-        {
-            throw new UserNotFoundException();
-        }
-
-        var storeUsers = dbUsers.Select(x => x.ToStoreUser());
-        foreach (var customSSOUser in storeUsers)
-        {
-            customSSOUser.Claims.Add(new SSOClaim("type", "value"));
-        }
-
-        return Task.FromResult(new FindUsersResult(storeUsers.ToList(), storeUsers.Count()));
-    }
-
     public async Task<bool> IsTOTPEnabled(ISSOUser user)
     {
         var dbUser = await _identityContext.Users.FindAsync(user.Id);

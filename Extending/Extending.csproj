@@ -8,12 +8,7 @@
 
     <ItemGroup>
       <PackageReference Include="Rsk.AdminUI" Version="6.3.0" />
-      <PackageReference Include="Rsk.CustomIdentity" Version="1.0.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\Products.AdminUI\BusinessLogic\IdentityExpress.Manager.BusinessLogic.csproj" />
-      <ProjectReference Include="..\..\Products.AdminUI\Site\IdentityExpress.Manager.UI.csproj" />
+      <PackageReference Include="Rsk.CustomIdentity" Version="2.0.0" />
     </ItemGroup>
 
 </Project>

@@ -11,17 +11,7 @@
     <ItemGroup>
       <PackageReference Include="MongoDB.Driver" Version="2.17.1" />
       <PackageReference Include="Rsk.AdminUI" Version="6.3.0" />
-      <PackageReference Include="Rsk.CustomIdentity" Version="1.0.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\Products.AdminUI\Site\IdentityExpress.Manager.UI.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Reference Include="IdentityExpress.Manager.BusinessLogic, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-        <HintPath>..\..\Products.AdminUI\BusinessLogic\bin\Debug\net6.0\IdentityExpress.Manager.BusinessLogic.dll</HintPath>
-      </Reference>
+      <PackageReference Include="Rsk.CustomIdentity" Version="2.0.0" />
     </ItemGroup>
 
 </Project>
