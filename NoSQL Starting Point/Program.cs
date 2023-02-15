@@ -11,6 +11,7 @@ builder.Services.Configure<IdentityStoreDatabaseSettings>(builder.Configuration.
 builder.Services.AddAdminUI(options =>
 {
     options.IdentityType = IdentityType.CustomIdentity;
+    options.MigrationOptions = MigrationOptions.IdentityServerOnly;
 }).WithIdentityStore<CustomSSOStoreFactory>();
 
 var app = builder.Build();
