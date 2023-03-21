@@ -1,14 +1,18 @@
-﻿using IdentityExpress.Manager.UI.Extensions.DependencyInjection;
+﻿using IdentityExpress.Manager.BusinessLogic.Configuration;
+using IdentityExpress.Manager.MigrationRunner;
+using IdentityExpress.Manager.UI.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
     .AddAdminUI(
-    //Uncomment this to use custom connection factory
-    //options =>
-    //{
-    //    options.DatabaseConnectionFactoryType = DatabaseConnectionFactoryType.Custom;
-    //}
+    options =>
+    {
+        //Uncomment this to use custom connection factory
+        //options.DatabaseConnectionFactoryType = DatabaseConnectionFactoryType.Custom;
+        //Uncomment this to stop migrations running automatically
+        //options.MigrationOptions = MigrationOptions.None;
+    }
     )
   //Uncomment this to use custom connection factory
   //.WithConnectionFactory<CustomConnectionFactory>()
@@ -16,7 +20,7 @@ builder.Services
 
 var app = builder.Build();
 
-//Uncomment this to run migrations
+//Uncomment this to run migrations manually
 //app.RunMigrations(MigrationType.All);
 
 app.UseAdminUI();
