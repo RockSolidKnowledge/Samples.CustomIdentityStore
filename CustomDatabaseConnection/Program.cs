@@ -1,7 +1,4 @@
-﻿using CustomDatabaseConnection;
-using IdentityExpress.Manager.BusinessLogic.Configuration;
-using IdentityExpress.Manager.MigrationRunner;
-using IdentityExpress.Manager.UI.Extensions.DependencyInjection;
+﻿using IdentityExpress.Manager.UI.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +17,7 @@ builder.Services
 var app = builder.Build();
 
 //Uncomment this to run migrations
-//await app.RunMigrationsAsync(MigrationType.All);
+//app.RunMigrations(MigrationType.All);
 
 app.UseAdminUI();
 
