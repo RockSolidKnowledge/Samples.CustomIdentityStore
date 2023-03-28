@@ -1,4 +1,5 @@
-﻿using IdentityExpress.Manager.BusinessLogic.Configuration;
+﻿using CustomDatabaseConnection;
+using IdentityExpress.Manager.BusinessLogic.Configuration;
 using IdentityExpress.Manager.MigrationRunner;
 using IdentityExpress.Manager.UI.Extensions.DependencyInjection;
 
