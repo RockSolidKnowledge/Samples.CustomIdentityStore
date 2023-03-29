@@ -4,9 +4,23 @@ using System.Data.Common;
 
 namespace CustomDatabaseConnection
 {
+    // Note - this example will only work for SqlServer.
     internal class CustomConnectionFactory : IDatabaseConnectionFactory
     {
-        private readonly string connectionString = "Data Source=localhost\\SQLEXPRESS;User Id=AdminUI-User;Password=WoyblhD5G7gz7LA5Nz7e;Database=IdentityExpressDb;";
+        private readonly string connectionString;
+
+        public CustomConnectionFactory(IConfiguration configuration)
+        {
+            if (configuration is null)
+            {
+                throw new ArgumentNullException(nameof(configuration));
+            }
+             var key = "CustomConnectionFactoryConnectionString";
+            connectionString = configuration.GetValue<string>(key);
+
+            if (string.IsNullOrWhiteSpace(connectionString))
+                throw new Exception($"No connection string found in configuration setting \"{key}\"");
+        }
         public DbConnection CreateAuditRecordsConnection(bool migration = false)
         {
             return new SqlConnection(connectionString);
