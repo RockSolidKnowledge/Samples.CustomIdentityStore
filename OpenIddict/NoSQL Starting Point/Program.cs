@@ -1,10 +1,19 @@
 ﻿using IdentityExpress.Manager.BusinessLogic.Configuration;
 using IdentityExpress.Manager.UI.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using MongoDB.Bson.Serialization;
+using MongoDB.Driver;
 using NoSQLStartingPoint;
 using NoSQLStartingPoint.Models;
+using Rsk.CustomIdentity.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
+
+BsonClassMap.RegisterClassMap<CustomSSOUser>();
+BsonClassMap.RegisterClassMap<CustomSSORole>();
+BsonClassMap.RegisterClassMap<CustomSSOClaim>();
+BsonClassMap.RegisterClassMap<CustomSSOClaimType>();
 
 builder.Services.Configure<IdentityStoreDatabaseSettings>(builder.Configuration.GetSection("IdentityDatabase"));
 
@@ -15,7 +24,7 @@ builder.Services.AddAdminUI(options =>
 
 var app = builder.Build();
 
-// app.MapGet("/", async (IOptions<IdentityStoreDatabaseSettings> dbSettings) =>
+// app.MapGet("/runseed", async (IOptions<IdentityStoreDatabaseSettings> dbSettings) =>
 // {
 //     var mongoClient = new MongoClient(
 //         dbSettings.Value.ConnectionString);
@@ -46,7 +55,7 @@ var app = builder.Build();
 //         TwoFactorEnabled = true,
 //         UserName = "sam",
 //         ConcurrencyStamp = Guid.NewGuid().ToString(),
-//         Roles = new List<ISSORole>
+//         Roles = new List<CustomSSORole>
 //         {
 //             adminRole
 //         }
@@ -71,10 +80,5 @@ var app = builder.Build();
 // });
 
 app.UseAdminUI();
-
-BsonClassMap.RegisterClassMap<CustomSSOUser>();
-BsonClassMap.RegisterClassMap<CustomSSORole>();
-BsonClassMap.RegisterClassMap<CustomSSOClaim>();
-BsonClassMap.RegisterClassMap<CustomSSOClaimType>();
 
 app.Run();

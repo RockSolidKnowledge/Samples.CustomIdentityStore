@@ -10,7 +10,6 @@ builder.Services
     .AddAdminUI(options =>
     {
         options.IdentityType = IdentityType.DefaultIdentity;
-        options.MigrationOptions = MigrationOptions.All;
     })
     .WithIdentityStore<CustomStoreFactory>();
 

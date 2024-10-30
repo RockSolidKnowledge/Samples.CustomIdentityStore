@@ -20,9 +20,7 @@ var app = builder.Build();
 
 app.UseAdminUI();
 
-app.Run();
-
-// app.MapGet("/", async (CustomIdentityDb context) =>
+// app.MapGet("/runseed", async (CustomIdentityDb context) =>
 // {
 //     var adminRole = new TenantRole
 //     {
@@ -101,3 +99,5 @@ app.Run();
 //     
 //     context.SaveChanges();
 // });
+
+app.Run();
