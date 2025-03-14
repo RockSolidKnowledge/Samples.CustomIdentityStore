@@ -1,11 +1,12 @@
 ﻿using IdentityExpress.Manager.UI.Extensions;
 using Microsoft.Data.SqlClient;
 using System.Data.Common;
+using IdentityExpress.Manager.BusinessLogic.Configuration.Database;
 
 namespace CustomDatabaseConnection
 {
     // Note - this example will only work for SqlServer.
-    internal class CustomConnectionFactory : IDatabaseConnectionFactory
+    internal class CustomConnectionFactory: IDuendeDbConnectionFactory
     {
         private readonly string connectionString;
 
