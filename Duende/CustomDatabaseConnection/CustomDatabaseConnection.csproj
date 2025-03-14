@@ -6,6 +6,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Rsk.AdminUI" Version="9.1.1" />
+        <PackageReference Include="Rsk.AdminUI" Version="10.0.0" />
     </ItemGroup>
 </Project>

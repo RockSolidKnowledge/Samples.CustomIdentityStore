@@ -12,4 +12,5 @@ public class CustomSSORole : ISSORole
     public string Description { get; set; }
     public bool NonEditable { get; set; }
     public string Name { get; set; }
+    public ICollection<ISSOClaim> Claims { get; set; }
 }
