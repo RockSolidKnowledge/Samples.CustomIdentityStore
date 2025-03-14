@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MongoDB.Driver" Version="2.23.1" />
-        <PackageReference Include="Rsk.AdminUI" Version="8.0.0" />
+        <PackageReference Include="MongoDB.Driver" Version="3.2.1" />
+        <PackageReference Include="Rsk.AdminUI" Version="9.1.1" />
         <PackageReference Include="Rsk.CustomIdentity" Version="2.0.0" />
     </ItemGroup>
 </Project>
